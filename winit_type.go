@@ -16,3 +16,14 @@ type winitParam struct {
 type WinitParam interface {
 	Action() string
 }
+
+type WinitResults struct {
+	Code interface{} `json:"code"`
+	Msg  string      `json:"msg"`
+}
+
+type PageParams struct {
+	TotalCount int `json:"totalCount"`
+	PageNo     int `json:"pageNo"`
+	PageSize   int `json:"pageSize"`
+}

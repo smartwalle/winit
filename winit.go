@@ -117,6 +117,27 @@ func (this *Winit) doRequest(apiType int, method string, param WinitParam, resul
 	fmt.Println("results", string(data))
 	fmt.Println("--------------------------------------------------")
 
+	var r *WinitResults
+	err = json.Unmarshal(data, &r)
+	if err != nil {
+		return err
+	}
+
+	switch ct := r.Code.(type) {
+	case int64:
+		if ct != 0 {
+			return errors.New(r.Msg)
+		}
+	case float64:
+		if ct != 0 {
+			return errors.New(r.Msg)
+		}
+	case string:
+		if ct != "0" {
+			return errors.New(r.Msg)
+		}
+	}
+
 	err = json.Unmarshal(data, results)
 	if err != nil {
 		return err
