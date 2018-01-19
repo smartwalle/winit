@@ -87,9 +87,9 @@ func (this *Winit) doRequest(apiType int, method string, param WinitParam, resul
 	var pBytes, _ = json.Marshal(p)
 	buf = bytes.NewReader(pBytes)
 
-	fmt.Println("--------------------------------------------------")
-	fmt.Println("param", string(pBytes))
-	fmt.Println("--------------------------------------------------")
+	//fmt.Println("--------------------------------------------------")
+	//fmt.Println("param", string(pBytes))
+	//fmt.Println("--------------------------------------------------")
 
 	var apiDomain = apiMap[apiType][this.isProduction]
 	req, err := http.NewRequest(method, apiDomain, buf)
@@ -113,9 +113,9 @@ func (this *Winit) doRequest(apiType int, method string, param WinitParam, resul
 
 	fmt.Println(resp.Status)
 
-	fmt.Println("--------------------------------------------------")
-	fmt.Println("results", string(data))
-	fmt.Println("--------------------------------------------------")
+	//fmt.Println("--------------------------------------------------")
+	//fmt.Println("results", string(data))
+	//fmt.Println("--------------------------------------------------")
 
 	var r *WinitResults
 	err = json.Unmarshal(data, &r)
