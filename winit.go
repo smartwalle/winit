@@ -111,8 +111,6 @@ func (this *Winit) doRequest(apiType int, method string, param WinitParam, resul
 		return err
 	}
 
-	fmt.Println(resp.Status)
-
 	//fmt.Println("--------------------------------------------------")
 	//fmt.Println("results", string(data))
 	//fmt.Println("--------------------------------------------------")
