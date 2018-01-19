@@ -20,6 +20,11 @@ func (this *Winit) CreateOutboundInfo(param *CreateOutboundInfoParam) (results *
 	return results, err
 }
 
+func (this *Winit) CreateOutboundOrder(param *CreateOutboundOrderParam) (results *CreateOutboundOrderResult, err error) {
+	err = this.doRequest(k_WINIT_API_TYPE_AD, "POST", param, &results)
+	return results, err
+}
+
 func (this *Winit) GetOrderVerdorTracking(param *GetOrderVerdorTrackingParam) (results *GetOrderVerdorTrackingResults, err error) {
 	err = this.doRequest(k_WINIT_API_TYPE_OPEN_API, "POST", param, &results)
 	return results, err

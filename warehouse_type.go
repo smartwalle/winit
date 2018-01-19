@@ -97,7 +97,7 @@ type CreateOutboundInfoParam struct {
 }
 
 func (this *CreateOutboundInfoParam) Action() string {
-	return "createOutboundOrder"
+	return "createOutboundInfo"
 }
 
 type OutBoundProduct struct {
@@ -112,6 +112,40 @@ type CreateOutboundInfoResult struct {
 }
 
 type CreateOutboundInfoData struct {
+	OutboundOrderNum string `json:"outboundOrderNum"`
+}
+
+// CreateOutboundOrderParam http://developer.winit.com.cn/document/detail/id/49.html
+type CreateOutboundOrderParam struct {
+	WarehouseID      string             `json:"warehouseID"`
+	Repeatable       string             `json:"repeatable"`
+	DeliveryWayID    string             `json:"deliveryWayID"`
+	InsuranceTypeID  string             `json:"insuranceTypeID"`
+	SellerOrderNo    string             `json:"sellerOrderNo"`
+	RecipientName    string             `json:"recipientName"`
+	PhoneNum         string             `json:"phoneNum"`
+	ZipCode          string             `json:"zipCode"`
+	EmailAddress     string             `json:"emailAddress"`
+	State            string             `json:"state"`
+	Region           string             `json:"region"`
+	City             string             `json:"city"`
+	Address1         string             `json:"address1"`
+	Address2         string             `json:"address2"`
+	DoorplateNumbers string             `json:"doorplateNumbers"`
+	ProductList      []*OutBoundProduct `json:"productList"`
+}
+
+func (this *CreateOutboundOrderParam) Action() string {
+	return "createOutboundOrder"
+}
+
+type CreateOutboundOrderResult struct {
+	Code int                     `json:"code"`
+	Msg  string                  `json:"msg"`
+	Data *CreateOutboundOrderData `json:"data"`
+}
+
+type CreateOutboundOrderData struct {
 	OutboundOrderNum string `json:"outboundOrderNum"`
 }
 

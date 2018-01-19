@@ -60,7 +60,7 @@ func TestWinit_CreateOutboundInfo(t *testing.T) {
 	//pp.Region = "Hawaii"
 	//pp.City = "Honolulu"
 	//pp.Address1 = "aaaaa"
-	//pp.SellerOrderNo = "test-order1"
+	//pp.SellerOrderNo = "test-order3"
 	//
 	//var pl []*OutBoundProduct
 	//var p1 = &OutBoundProduct{}
@@ -78,18 +78,51 @@ func TestWinit_CreateOutboundInfo(t *testing.T) {
 	//}
 }
 
+func TestWinit_CreateOutboundOrder(t *testing.T) {
+	//fmt.Println("===== CreateOutboundOrder =====")
+	//pp := &CreateOutboundOrderParam{}
+	//pp.WarehouseID = "1000008"
+	//pp.Repeatable = "N"
+	//pp.DeliveryWayID = "1000111"
+	//pp.InsuranceTypeID = "1000000"
+	//pp.RecipientName = "YF"
+	//pp.PhoneNum = "3865622627"
+	//pp.ZipCode = "96818"
+	//pp.EmailAddress = "aa@qq.com"
+	//pp.State = "US"
+	//pp.Region = "Hawaii"
+	//pp.City = "Honolulu"
+	//pp.Address1 = "aaaaa"
+	//pp.SellerOrderNo = "test-order2"
+	//
+	//var pl []*OutBoundProduct
+	//var p1 = &OutBoundProduct{}
+	//p1.ProductCode = "25663"
+	//p1.ProductNum = 10
+	//
+	//pl = append(pl, p1)
+	//pp.ProductList = pl
+	//
+	//
+	//results, err := client.CreateOutboundOrder(pp)
+	//fmt.Println(err)
+	//if results != nil {
+	//	fmt.Println(results.Data.OutboundOrderNum)
+	//}
+}
+
 func TestWinit_GetOrderVerdorTracking(t *testing.T) {
-	fmt.Println("===== GetOrderVerdorTracking =====")
-	pp := &GetOrderVerdorTrackingParam{}
-	pp.TrackingNos = "WO0000002370"
-	results, err := client.GetOrderVerdorTracking(pp)
-	fmt.Println(err)
-	if results != nil {
-		for _, t := range results.Data {
-			fmt.Println(t.OrderNo, t.Origin, t.Status)
-			for _, tt := range t.Trace {
-				fmt.Println(tt.Location, tt.EventDescription, tt.EventStatus)
-			}
-		}
-	}
+	//fmt.Println("===== GetOrderVerdorTracking =====")
+	//pp := &GetOrderVerdorTrackingParam{}
+	//pp.TrackingNos = "WO0000002370"
+	//results, err := client.GetOrderVerdorTracking(pp)
+	//fmt.Println(err)
+	//if results != nil {
+	//	for _, t := range results.Data {
+	//		fmt.Println(t.OrderNo, t.Origin, t.Status)
+	//		for _, tt := range t.Trace {
+	//			fmt.Println(tt.Location, tt.EventDescription, tt.EventStatus)
+	//		}
+	//	}
+	//}
 }
