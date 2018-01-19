@@ -1,0 +1,56 @@
+package winit
+
+// RegisterProductParam http://developer.winit.com.cn/Index/index.php?s=Index/index/id/19/l/zh-cn
+type RegisterProductParam struct {
+	ProductList []*Product `json:"productList"`
+}
+
+func (this *RegisterProductParam) Action() string {
+	return "registerProduct"
+}
+
+type Product struct {
+	Battery             string  `json:"battery"`
+	Branded             string  `json:"branded"`
+	BrandedName         string  `json:"brandedName"`
+	CategoryOne         string  `json:"categoryOne"`
+	CategoryThree       string  `json:"categoryThree"`
+	CategoryTwo         string  `json:"categoryTwo"`
+	ChineseName         string  `json:"chineseName"`
+	DisplayPageUrl      string  `json:"displayPageUrl"`
+	EnglishName         string  `json:"englishName"`
+	ExportCountry       string  `json:"exportCountry"`
+	ExportDeclaredValue float64 `json:"exportDeclaredvalue"`
+	FixedVolumeWeight   string  `json:"fixedVolumeWeight"`
+	InporCountry        string  `json:"inporCountry"`
+	InportDeclaredValue float64 `json:"inportDeclaredvalue"`
+	Model               string  `json:"model"`
+	ProductCode         string  `json:"productCode"`
+	RegisteredHeight    float32 `json:"registeredHeight"`
+	RegisteredLength    float32 `json:"registeredLength"`
+	RegisteredWeight    float32 `json:"registeredWeight"`
+	RegisteredWidth     float32 `json:"registeredWidth"`
+	Remark              string  `json:"remark"`
+	Specification       string  `json:"specification"`
+}
+
+type RegisterProductResults struct {
+	Code int    `json:"code"`
+	Msg  string `json:"msg"`
+}
+
+// ProductListParam https://developer.winit.com.cn/document/detail/id/17.html
+type ProductListParam struct {
+	PageNo   string `json:"pageNo"`
+	PageSize string `json:"pageSize"`
+	SKUCode  string `json:"skuCode"`
+}
+
+func (this *ProductListParam) Action() string {
+	return "winit.mms.item.list"
+}
+
+type ProductListResults struct {
+	Code string `json:"code"`
+	Msg  string `json:"msg"`
+}
