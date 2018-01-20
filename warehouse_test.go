@@ -2,7 +2,6 @@ package winit
 
 import (
 	"testing"
-	"fmt"
 )
 
 func TestWinit_GetWarehouseList(t *testing.T) {
