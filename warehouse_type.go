@@ -63,7 +63,7 @@ func (this *DeliveryWayListParam) Action() string {
 }
 
 type DeliveryWayListResults struct {
-	Code int                    `json:"code"`
+	Code string                 `json:"code"`
 	Msg  string                 `json:"msg"`
 	Data []*DeliveryWayListData `json:"data"`
 }
